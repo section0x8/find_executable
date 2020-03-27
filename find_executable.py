@@ -64,12 +64,10 @@ class ExecutableFile:
 def enumerate_files(filepath):
     
     global g_file_list
-    # Clean up. No idea why. Python 
-    # memory usage just bugs me.
-    if isinstance(g_file_list, list):
-        g_file_list.clear()
+    global g_result_list
 
-    g_file_list = []
+    g_file_list.clear()
+    g_result_list.clear()
      
     if filepath.is_file():
         ef = ExecutableFile.create(filepath)
